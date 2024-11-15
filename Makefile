@@ -3,7 +3,7 @@ all: ur clean package index
 
 CHARTS := gitea
 
-REPO_URL := https://Ujstor.github.io/helm-charts-system
+REPO_URL := https://Ujstor.github.io/helm-charts-apps
 
 package: $(CHARTS)
 
