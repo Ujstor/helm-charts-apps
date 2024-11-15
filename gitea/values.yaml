@@ -7,7 +7,7 @@ gitea:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     hosts:
-      - host: gitea.test.com
+      - host:
         paths:
           - path: /
             pathType: Prefix

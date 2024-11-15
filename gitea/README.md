@@ -19,7 +19,7 @@ Gitea Helm chart configured by Ujstor
 | gitea.ingress.annotations."nginx.ingress.kubernetes.io/force-ssl-redirect" | string | `"true"` |  |
 | gitea.ingress.className | string | `"nginx"` |  |
 | gitea.ingress.enabled | bool | `true` |  |
-| gitea.ingress.hosts[0].host | string | `"gitea.test.com"` |  |
+| gitea.ingress.hosts[0].host | string | `nil` |  |
 | gitea.ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | gitea.ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
 | gitea.ingress.tls[0].secretName | string | `"gitea-tls"` |  |
