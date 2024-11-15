@@ -3,16 +3,16 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.22.3
-    created: "2024-11-15T19:26:52.91126676+01:00"
+    created: "2024-11-15T19:34:23.417779748+01:00"
     dependencies:
     - name: gitea
       repository: https://dl.gitea.com/charts/
       version: 10.6.0
     description: Gitea Helm chart configured by Ujstor
-    digest: 08e3405f2097cb3e314b4d542a128a03b589fd2840f8e7ec0be045997fdbe8ed
+    digest: 310512ccc6f8e8fb14270c0e66326256186724871530ac96c1ca8f526ca14481
     name: gitea
     type: application
     urls:
     - https://Ujstor.github.io/helm-charts-apps/gitea-1.0.0.tgz
     version: 1.0.0
-generated: "2024-11-15T19:26:52.895558855+01:00"
+generated: "2024-11-15T19:34:23.403089041+01:00"
