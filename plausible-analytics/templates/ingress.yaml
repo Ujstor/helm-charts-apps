@@ -1,0 +1,44 @@
+{{- if .Values.customIngress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "plausible-analytics.fullname" . }}-custom
+  labels:
+    {{- include "plausible-analytics.labels" . | nindent 4 }}
+    app.kubernetes.io/component: custom-ingress
+  {{- with .Values.customIngress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- with .Values.customIngress.className }}
+  ingressClassName: {{ . }}
+  {{- end }}
+  {{- if .Values.customIngress.tls }}
+  tls:
+    {{- range .Values.customIngress.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
+  {{- end }}
+  rules:
+    {{- range .Values.customIngress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            {{- with .pathType }}
+            pathType: {{ . }}
+            {{- end }}
+            backend:
+              service:
+                name: {{ include "plausible-analytics.fullname" $ }}
+                port:
+                  number: {{ $.Values.customIngress.servicePort }}
+          {{- end }}
+    {{- end }}
+{{- end }}

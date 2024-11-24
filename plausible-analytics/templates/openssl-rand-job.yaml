@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: generate-random-secret
+spec:
+  template:
+    spec:
+      containers:
+      - name: secret-generator
+        image: bitnami/kubectl
+        command:
+        - /bin/sh
+        - -c
+        - |
+          RANDOM_VALUE=$(openssl rand -base64 32)
+
+          kubectl create secret generic random-totp-vault-key --from-literal=totp-vault-key="$RANDOM_VALUE"
+
+          echo "Secret created successfully"
+      serviceAccountName: secret-creator
+      restartPolicy: Never
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: secret-creator
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: secret-creator
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["create"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: secret-creator
+subjects:
+- kind: ServiceAccount
+  name: secret-creator
+roleRef:
+  kind: Role
+  name: secret-creator
+  apiGroup: rbac.authorization.k8s.io

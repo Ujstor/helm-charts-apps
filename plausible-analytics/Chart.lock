@@ -1,0 +1,9 @@
+dependencies:
+- name: plausible-analytics
+  repository: https://imio.github.io/helm-charts
+  version: 0.3.3
+- name: secret-store
+  repository: https://ujstor.github.io/helm-charts-system
+  version: 1.0.0
+digest: sha256:3d27dc7827e6a951c6a6da9695dc094f4746ae744bd789aaf38f8b9d56763f5c
+generated: "2024-11-24T18:49:54.988288176+01:00"

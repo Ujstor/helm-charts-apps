@@ -1,7 +1,7 @@
 all: ur clean package index
 	@echo "Packaging complete and index.yaml updated."
 
-CHARTS := gitea
+CHARTS := gitea plausible-analytics
 
 REPO_URL := https://Ujstor.github.io/helm-charts-apps
 

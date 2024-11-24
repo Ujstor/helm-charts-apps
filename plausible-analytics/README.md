@@ -1,30 +1,3 @@
-# K8s Apps Helm Charts
-
-Helm chart collection that simplifies Kubernetes configuration to be production-ready.
-
-
-# gitea
-
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.22.3](https://img.shields.io/badge/AppVersion-1.22.3-informational?style=flat-square)
-
-Gitea Helm chart configured by Ujstor
-
-## Requirements
-
-| Repository | Name | Version |
-|------------|------|---------|
-| https://dl.gitea.com/charts/ | gitea | 10.6.0 |
-
-## Values
-
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| gitea.persistence.size | string | `"5Gi"` |  |
-
-
-![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)
-
-
 # plausible-analytics
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.1.1](https://img.shields.io/badge/AppVersion-2.1.1-informational?style=flat-square)
@@ -69,5 +42,4 @@ Plausible-analytics Helm chart configured by Ujstor
 | secret-store.secretStore.provider.type | string | `"kubernetes"` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
-
 

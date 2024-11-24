@@ -3,16 +3,34 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.22.3
-    created: "2024-11-16T00:29:54.25878213+01:00"
+    created: "2024-11-24T21:29:24.442977232+01:00"
     dependencies:
     - name: gitea
       repository: https://dl.gitea.com/charts/
       version: 10.6.0
     description: Gitea Helm chart configured by Ujstor
-    digest: 3eae5f6c661189059c156b3eae3e87e14a09ff2aa7c0f28f58fec267adb41e89
+    digest: fc983981cbb02efb529192a89ef2081b9d69bbdaec176b9e8af2fafbc5015baa
     name: gitea
     type: application
     urls:
     - https://Ujstor.github.io/helm-charts-apps/gitea-1.0.0.tgz
     version: 1.0.0
-generated: "2024-11-16T00:29:54.24360104+01:00"
+  plausible-analytics:
+  - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2024-11-24T21:29:24.449404209+01:00"
+    dependencies:
+    - name: plausible-analytics
+      repository: https://imio.github.io/helm-charts
+      version: 0.3.3
+    - name: secret-store
+      repository: https://ujstor.github.io/helm-charts-system
+      version: 1.0.0
+    description: Plausible-analytics Helm chart configured by Ujstor
+    digest: 6b777fe4774930bdf8257102da2539af610905313e0c82c525c6d22a27ec1aa9
+    name: plausible-analytics
+    type: application
+    urls:
+    - https://Ujstor.github.io/helm-charts-apps/plausible-analytics-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-11-24T21:29:24.426809287+01:00"
