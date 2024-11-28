@@ -16,20 +16,17 @@ Plausible-analytics Helm chart configured by Ujstor
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | baseURL | string | `"http://plausible-analytics.local"` |  |
-| customIngress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
-| customIngress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
-| customIngress.className | string | `"nginx"` |  |
-| customIngress.enabled | bool | `false` |  |
-| customIngress.hosts[0].host | string | `"plausible-analytics.local"` |  |
-| customIngress.hosts[0].paths[0].path | string | `"/"` |  |
-| customIngress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
-| customIngress.servicePort | int | `80` |  |
-| customIngress.tls[0].hosts[0] | string | `"plausible-analytics.local"` |  |
-| customIngress.tls[0].secretName | string | `"plausible-analytics-tls"` |  |
 | disableRegistration | bool | `false` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/plausible/community-edition"` |  |
 | image.tag | string | `"v2.1.4"` |  |
+| ingress.annotations | object | `{}` |  |
+| ingress.className | string | `""` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.hosts | list | `[]` |  |
+| ingress.path | string | `"/"` |  |
+| ingress.pathType | string | `"Prefix"` |  |
+| ingress.tls | list | `[]` |  |
 | logFailedLoginAttempts | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"200m"` |  |
