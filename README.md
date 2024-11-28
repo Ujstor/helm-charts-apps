@@ -44,7 +44,7 @@ Plausible-analytics Helm chart configured by Ujstor
 | customIngress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | customIngress.className | string | `"nginx"` |  |
-| customIngress.enabled | bool | `true` |  |
+| customIngress.enabled | bool | `false` |  |
 | customIngress.hosts[0].host | string | `"plausible-analytics.local"` |  |
 | customIngress.hosts[0].paths[0].path | string | `"/"` |  |
 | customIngress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |

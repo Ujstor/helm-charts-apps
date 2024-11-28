@@ -13,7 +13,7 @@ service:
   port: 80
 
 customIngress:
-  enabled: true
+  enabled: false
   className: "nginx"
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
