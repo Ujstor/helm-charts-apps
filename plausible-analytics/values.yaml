@@ -12,36 +12,21 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: false
-  className: ""
-  pathType: Prefix
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts: []
-  path: /
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
-  #
-# customIngress:
-#   enabled: false
-#   className: "nginx"
-#   servicePort: 80
-#   annotations:
-#     cert-manager.io/cluster-issuer: "letsencrypt"
-#     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-#   hosts:
-#     - host: plausible-analytics.local
-#       paths:
-#         - path: /
-#           pathType: Prefix
-#   tls:
-#     - secretName: plausible-analytics-tls
-#       hosts:
-#         - plausible-analytics.local
+customIngress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+  hosts:
+    - host: plausible-analytics.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: plausible-analytics-tls
+      hosts:
+        - plausible-analytics.local
 
 resources:
   limits:
