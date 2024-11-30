@@ -38,7 +38,7 @@ spec:
               service:
                 name: {{ include "plausible-analytics.fullname" $ }}
                 port:
-                  number: {{ $.Values.service.port }}
+                  number: {{ index $.Values "plausible-analytics" "service" "port" }}
           {{- end }}
     {{- end }}
 {{- end }}
