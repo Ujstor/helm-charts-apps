@@ -2,5 +2,8 @@ dependencies:
 - name: gitea
   repository: https://dl.gitea.com/charts/
   version: 10.6.0
-digest: sha256:f6f7acde0cae22babfedcb75034ed1d560ef86897679e2138fca68c9400e4a86
-generated: "2024-11-15T19:01:01.951064731+01:00"
+- name: secret-store
+  repository: https://ujstor.github.io/helm-charts-system
+  version: 1.0.0
+digest: sha256:ac087823bacc0aa2effa57ff13e2fe26c75107025c8ca2d8e632ea28d317d406
+generated: "2024-11-30T17:49:15.122369258+01:00"

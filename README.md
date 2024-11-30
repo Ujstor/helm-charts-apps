@@ -13,12 +13,18 @@ Gitea Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://dl.gitea.com/charts/ | gitea | 10.6.0 |
+| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| gitea.gitea.admin.existingSecret | string | `"gitea-admin-secret"` |  |
 | gitea.persistence.size | string | `"5Gi"` |  |
+| secret-store.secretStore.clusterWide | bool | `false` |  |
+| secret-store.secretStore.provider.kubernetes.auth.serviceAccount.create | bool | `true` |  |
+| secret-store.secretStore.provider.kubernetes.auth.serviceAccount.name | string | `"gitea-secret-store-sa"` |  |
+| secret-store.secretStore.provider.type | string | `"kubernetes"` |  |
 
 
 ![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)
@@ -43,7 +49,6 @@ Plausible-analytics Helm chart configured by Ujstor
 | baseURL | string | `"http://plausible-analytics.local"` |  |
 | customIngress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
-| customIngress.annotations."nginx.ingress.kubernetes.io/proxy-connect-timeout" | string | `"3600"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"3600"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/proxy-send-timeout" | string | `"3600"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/server-snippets" | string | `"location / {\n  proxy_set_header Upgrade $http_upgrade;\n  proxy_http_version 1.1;\n  proxy_set_header X-Forwarded-Host $http_host;\n  proxy_set_header X-Forwarded-Proto $scheme;\n  proxy_set_header X-Forwarded-For $remote_addr;\n  proxy_set_header Host $host;\n  proxy_set_header Connection \"upgrade\";\n  proxy_set_header X-Real-IP $remote_addr;\n  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n  proxy_set_header   Upgrade $http_upgrade;\n  proxy_cache_bypass $http_upgrade;\n}\n"` |  |
@@ -60,8 +65,8 @@ Plausible-analytics Helm chart configured by Ujstor
 | image.tag | string | `"v2.1.4"` |  |
 | logFailedLoginAttempts | bool | `true` |  |
 | replicaCount | int | `1` |  |
-| resources.limits.cpu | string | `"200m"` |  |
-| resources.limits.memory | string | `"256Mi"` |  |
+| resources.limits.cpu | string | `"500m"` |  |
+| resources.limits.memory | string | `"512Mi"` |  |
 | resources.requests.cpu | string | `"100m"` |  |
 | resources.requests.memory | string | `"128Mi"` |  |
 | secret-store.secretStore.clusterWide | bool | `false` |  |
@@ -90,6 +95,8 @@ Uptime Kuma Helm chart configured by Ujstor
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| uptime-kuma.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
+| uptime-kuma.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | uptime-kuma.ingress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"3600"` |  |
 | uptime-kuma.ingress.annotations."nginx.ingress.kubernetes.io/proxy-send-timeout" | string | `"3600"` |  |
 | uptime-kuma.ingress.annotations."nginx.ingress.kubernetes.io/server-snippets" | string | `"location / {\n  proxy_set_header Upgrade $http_upgrade;\n  proxy_http_version 1.1;\n  proxy_set_header X-Forwarded-Host $http_host;\n  proxy_set_header X-Forwarded-Proto $scheme;\n  proxy_set_header X-Forwarded-For $remote_addr;\n  proxy_set_header Host $host;\n  proxy_set_header Connection \"upgrade\";\n  proxy_set_header X-Real-IP $remote_addr;\n  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n  proxy_set_header   Upgrade $http_upgrade;\n  proxy_cache_bypass $http_upgrade;\n}\n"` |  |

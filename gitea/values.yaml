@@ -1,3 +1,17 @@
 gitea:
   persistence:
     size: 5Gi
+  gitea:
+    admin:
+      existingSecret: gitea-admin-secret
+
+secret-store:
+  secretStore:
+    clusterWide: false
+    provider:
+      type: kubernetes
+      kubernetes:
+        auth:
+          serviceAccount:
+            create: true
+            name: "gitea-secret-store-sa"

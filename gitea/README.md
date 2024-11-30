@@ -9,10 +9,16 @@ Gitea Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://dl.gitea.com/charts/ | gitea | 10.6.0 |
+| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| gitea.gitea.admin.existingSecret | string | `"gitea-admin-secret"` |  |
 | gitea.persistence.size | string | `"5Gi"` |  |
+| secret-store.secretStore.clusterWide | bool | `false` |  |
+| secret-store.secretStore.provider.kubernetes.auth.serviceAccount.create | bool | `true` |  |
+| secret-store.secretStore.provider.kubernetes.auth.serviceAccount.name | string | `"gitea-secret-store-sa"` |  |
+| secret-store.secretStore.provider.type | string | `"kubernetes"` |  |
 
