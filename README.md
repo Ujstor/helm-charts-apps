@@ -71,6 +71,7 @@ Plausible-analytics Helm chart configured by Ujstor
 | plausible-analytics.resources.requests.memory | string | `"128Mi"` |  |
 | plausible-analytics.service.port | int | `80` |  |
 | plausible-analytics.service.type | string | `"ClusterIP"` |  |
+| plausible-analytics.totpVaultKey | string | `""` |  |
 | secret-store.secretStore.clusterWide | bool | `false` |  |
 | secret-store.secretStore.provider.kubernetes.auth.serviceAccount.create | bool | `true` |  |
 | secret-store.secretStore.provider.kubernetes.auth.serviceAccount.name | string | `"analytics-secret-store-sa"` |  |

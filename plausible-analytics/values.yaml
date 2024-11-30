@@ -1,5 +1,7 @@
 plausible-analytics:
   baseURL: http://plausible-analytics.local
+  totpVaultKey: ""
+
   disableRegistration: false
   logFailedLoginAttempts: true
 
