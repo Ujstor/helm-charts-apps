@@ -46,7 +46,6 @@ Plausible-analytics Helm chart configured by Ujstor
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| baseURL | string | `"http://plausible-analytics.local"` |  |
 | customIngress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | customIngress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"3600"` |  |
@@ -59,22 +58,23 @@ Plausible-analytics Helm chart configured by Ujstor
 | customIngress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
 | customIngress.tls[0].hosts[0] | string | `"plausible-analytics.local"` |  |
 | customIngress.tls[0].secretName | string | `"plausible-analytics-tls"` |  |
-| disableRegistration | bool | `false` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"ghcr.io/plausible/community-edition"` |  |
-| image.tag | string | `"v2.1.4"` |  |
-| logFailedLoginAttempts | bool | `true` |  |
-| replicaCount | int | `1` |  |
-| resources.limits.cpu | string | `"500m"` |  |
-| resources.limits.memory | string | `"512Mi"` |  |
-| resources.requests.cpu | string | `"100m"` |  |
-| resources.requests.memory | string | `"128Mi"` |  |
+| plausible-analytics.baseURL | string | `"http://plausible-analytics.local"` |  |
+| plausible-analytics.disableRegistration | bool | `false` |  |
+| plausible-analytics.image.pullPolicy | string | `"IfNotPresent"` |  |
+| plausible-analytics.image.repository | string | `"ghcr.io/plausible/community-edition"` |  |
+| plausible-analytics.image.tag | string | `"v2.1.4"` |  |
+| plausible-analytics.logFailedLoginAttempts | bool | `true` |  |
+| plausible-analytics.replicaCount | int | `1` |  |
+| plausible-analytics.resources.limits.cpu | string | `"500m"` |  |
+| plausible-analytics.resources.limits.memory | string | `"512Mi"` |  |
+| plausible-analytics.resources.requests.cpu | string | `"100m"` |  |
+| plausible-analytics.resources.requests.memory | string | `"128Mi"` |  |
+| plausible-analytics.service.port | int | `80` |  |
+| plausible-analytics.service.type | string | `"ClusterIP"` |  |
 | secret-store.secretStore.clusterWide | bool | `false` |  |
 | secret-store.secretStore.provider.kubernetes.auth.serviceAccount.create | bool | `true` |  |
 | secret-store.secretStore.provider.kubernetes.auth.serviceAccount.name | string | `"analytics-secret-store-sa"` |  |
 | secret-store.secretStore.provider.type | string | `"kubernetes"` |  |
-| service.port | int | `80` |  |
-| service.type | string | `"ClusterIP"` |  |
 
 
 ![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)

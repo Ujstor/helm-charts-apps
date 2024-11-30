@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.22.3
-    created: "2024-11-30T22:13:13.168509076+01:00"
+    created: "2024-11-30T22:37:31.771699234+01:00"
     dependencies:
     - name: gitea
       repository: https://dl.gitea.com/charts/
@@ -12,7 +12,7 @@ entries:
       repository: https://ujstor.github.io/helm-charts-system
       version: 1.0.0
     description: Gitea Helm chart configured by Ujstor
-    digest: da309d81f8c61a609f0636ccd1b2c184cc8df9004d006b05886a2bdf3d2a5eb6
+    digest: 038585853837851c8417bb2d69760eb3d9d79697417e13af9b094941fb604292
     name: gitea
     type: application
     urls:
@@ -21,7 +21,7 @@ entries:
   plausible-analytics:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2024-11-30T22:13:13.175029724+01:00"
+    created: "2024-11-30T22:37:31.779218627+01:00"
     dependencies:
     - name: plausible-analytics
       repository: https://imio.github.io/helm-charts
@@ -30,7 +30,7 @@ entries:
       repository: https://ujstor.github.io/helm-charts-system
       version: 1.0.0
     description: Plausible-analytics Helm chart configured by Ujstor
-    digest: 3c8381a68cfa79a61b81a69b16c6beac425d66240159fe8a11d68d09dca3d7c9
+    digest: b1e08f7e21e1908ecfd2f492851ece0955d537b38b5e5503d89c08f5300715c2
     name: plausible-analytics
     type: application
     urls:
@@ -39,13 +39,13 @@ entries:
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.23.13
-    created: "2024-11-30T22:13:13.175593845+01:00"
+    created: "2024-11-30T22:37:31.779837588+01:00"
     dependencies:
     - name: uptime-kuma
       repository: https://helm.irsigler.cloud
       version: 2.20.0
     description: Uptime Kuma Helm chart configured by Ujstor
-    digest: f450ab13cddb01c3ab86d2fd95c624a34e701a2aa1d7575ead5fe13eee29fcf4
+    digest: 93f309220480f5ab4a656a73dbed258c4bcf258c7f4e2f6fc8df6238bfad413c
     name: uptime-kuma
     type: application
     urls:
@@ -54,16 +54,16 @@ entries:
   wordpress:
   - apiVersion: v2
     appVersion: 6.7.1
-    created: "2024-11-30T22:13:13.182738904+01:00"
+    created: "2024-11-30T22:37:31.786073561+01:00"
     dependencies:
     - name: wordpress
       repository: https://charts.bitnami.com/bitnami
       version: 24.0.7
     description: Wordpress Helm chart configured by Ujstor
-    digest: 0efb4ceff0e56194423ee89e1128ae0e82505b4ad11071b1b643596a6f22368e
+    digest: 3ea61d06cdfa7f5a4f84b7b427165d395b60d1a8cb3936447e6587d7ededfad6
     name: wordpress
     type: application
     urls:
     - https://Ujstor.github.io/helm-charts-apps/wordpress-1.0.0.tgz
     version: 1.0.0
-generated: "2024-11-30T22:13:13.152925181+01:00"
+generated: "2024-11-30T22:37:31.7563881+01:00"

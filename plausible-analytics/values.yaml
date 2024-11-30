@@ -1,16 +1,25 @@
-baseURL: http://plausible-analytics.local
-disableRegistration: false
-logFailedLoginAttempts: true
+plausible-analytics:
+  baseURL: http://plausible-analytics.local
+  disableRegistration: false
+  logFailedLoginAttempts: true
 
-replicaCount: 1
-image:
-  repository: ghcr.io/plausible/community-edition
-  pullPolicy: IfNotPresent
-  tag: "v2.1.4"
+  replicaCount: 1
+  image:
+    repository: ghcr.io/plausible/community-edition
+    pullPolicy: IfNotPresent
+    tag: "v2.1.4"
 
-service:
-  type: ClusterIP
-  port: 80
+  service:
+    type: ClusterIP
+    port: 80
+
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
 customIngress:
   enabled: false
@@ -43,14 +52,6 @@ customIngress:
     - secretName: plausible-analytics-tls
       hosts:
         - plausible-analytics.local
-
-resources:
-  limits:
-    cpu: 500m
-    memory: 512Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
 
 secret-store:
   secretStore:
