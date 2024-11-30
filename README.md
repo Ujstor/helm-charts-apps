@@ -61,8 +61,10 @@ Plausible-analytics Helm chart configured by Ujstor
 | plausible-analytics.baseURL | string | `"http://plausible-analytics.local"` |  |
 | plausible-analytics.disableRegistration | bool | `false` |  |
 | plausible-analytics.image.pullPolicy | string | `"IfNotPresent"` |  |
+| plausible-analytics.image.repository | string | `"docker.io/plausible/analytics"` |  |
 | plausible-analytics.image.repository | string | `"ghcr.io/plausible/community-edition"` |  |
 | plausible-analytics.image.tag | string | `"v2.1.4"` |  |
+| plausible-analytics.image.tag | string | `"v2.0.0"` |  |
 | plausible-analytics.logFailedLoginAttempts | bool | `true` |  |
 | plausible-analytics.replicaCount | int | `1` |  |
 | plausible-analytics.resources.limits.cpu | string | `"500m"` |  |
