@@ -1,4 +1,20 @@
 gitea:
+  ingress:
+    enabled: false
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt"
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    hosts:
+      - host: gitea.domain.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - secretName: gitea-tls
+        hosts:
+          - gitea.domain.com
   persistence:
     size: 5Gi
   gitea:

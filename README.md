@@ -20,6 +20,16 @@ Gitea Helm chart configured by Ujstor
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | gitea.gitea.admin.existingSecret | string | `"gitea-admin-secret"` |  |
+| gitea.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
+| gitea.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
+| gitea.ingress.annotations."nginx.ingress.kubernetes.io/force-ssl-redirect" | string | `"true"` |  |
+| gitea.ingress.className | string | `"nginx"` |  |
+| gitea.ingress.enabled | bool | `false` |  |
+| gitea.ingress.hosts[0].host | string | `"gitea.domain.com"` |  |
+| gitea.ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| gitea.ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
+| gitea.ingress.tls[0].hosts[0] | string | `"gitea.domain.com"` |  |
+| gitea.ingress.tls[0].secretName | string | `"gitea-tls"` |  |
 | gitea.persistence.size | string | `"5Gi"` |  |
 | secret-store.secretStore.clusterWide | bool | `false` |  |
 | secret-store.secretStore.provider.kubernetes.auth.serviceAccount.create | bool | `true` |  |
@@ -50,6 +60,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.cache.expireHours | int | `24` |  |
 | harbor.existingSecretAdminPassword | string | `"harbor-admin-secret"` |  |
 | harbor.existingSecretSecretKey | string | `"harbor-secretkey-secret"` |  |
+| harbor.expose.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | harbor.expose.ingress.annotations."ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
 | harbor.expose.ingress.annotations."ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |

@@ -19,6 +19,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.cache.expireHours | int | `24` |  |
 | harbor.existingSecretAdminPassword | string | `"harbor-admin-secret"` |  |
 | harbor.existingSecretSecretKey | string | `"harbor-secretkey-secret"` |  |
+| harbor.expose.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | harbor.expose.ingress.annotations."ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
 | harbor.expose.ingress.annotations."ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
