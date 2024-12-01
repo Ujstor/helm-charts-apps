@@ -51,12 +51,17 @@ harbor:
     enabled: true
     gitHubToken: ""
 
-minio-harbor:
+minio-tenant:
   minio-tenant:
     tenant:
-      name: harborminio
+      name: minio-harbor
+      configuration:
+        name: minio-admin-secret
       pools:
-          size: 10Gi
+        - servers: 1
+          name: pool-0
+          volumesPerServer: 1
+          size: 20Gi
       buckets:
         - name: harbor-bucket
           objectLock: false

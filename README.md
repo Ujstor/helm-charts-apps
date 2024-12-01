@@ -81,11 +81,15 @@ Harbor Helm chart configured by Ujstor
 | harbor.persistence.resourcePolicy | string | `"keep"` |  |
 | harbor.trivy.enabled | bool | `true` |  |
 | harbor.trivy.gitHubToken | string | `""` |  |
-| minio-harbor.minio-tenant.tenant.buckets[0].name | string | `"harbor-bucket"` |  |
-| minio-harbor.minio-tenant.tenant.buckets[0].objectLock | bool | `false` |  |
-| minio-harbor.minio-tenant.tenant.buckets[0].region | string | `"us-east-1"` |  |
-| minio-harbor.minio-tenant.tenant.name | string | `"harborminio"` |  |
-| minio-harbor.minio-tenant.tenant.pools.size | string | `"10Gi"` |  |
+| minio-tenant.minio-tenant.tenant.buckets[0].name | string | `"harbor-bucket"` |  |
+| minio-tenant.minio-tenant.tenant.buckets[0].objectLock | bool | `false` |  |
+| minio-tenant.minio-tenant.tenant.buckets[0].region | string | `"us-east-1"` |  |
+| minio-tenant.minio-tenant.tenant.configuration.name | string | `"minio-admin-secret"` |  |
+| minio-tenant.minio-tenant.tenant.name | string | `"minio-harbor"` |  |
+| minio-tenant.minio-tenant.tenant.pools[0].name | string | `"pool-0"` |  |
+| minio-tenant.minio-tenant.tenant.pools[0].servers | int | `1` |  |
+| minio-tenant.minio-tenant.tenant.pools[0].size | string | `"20Gi"` |  |
+| minio-tenant.minio-tenant.tenant.pools[0].volumesPerServer | int | `1` |  |
 
 
 ![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)
