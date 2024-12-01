@@ -1,0 +1,63 @@
+harbor:
+  expose:
+    type: ingress
+    tls:
+      enabled: true
+      certSource: auto
+    ingress:
+      hosts:
+        core: harbor.domain.com
+      className: "nginx"
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: "true"
+        ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+  externalURL: https://harbor.domain.com
+  persistence:
+    enabled: true
+    resourcePolicy: "keep"
+    persistentVolumeClaim:
+      registry:
+        accessMode: ReadWriteOnce
+        size: 5Gi
+      jobservice:
+          accessMode: ReadWriteOnce
+          size: 1Gi
+      database:
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      redis:
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      trivy:
+        accessMode: ReadWriteOnce
+        size: 5Gi
+    imageChartStorage:
+      disableredirect: true
+      type: s3
+      s3:
+        existingSecret: "harbor-s3-secret"
+        region: us-west-1
+        bucket: harbor-bucket
+        regionendpoint: http://minio.harbor.svc.cluster.local
+  existingSecretAdminPassword: harbor-admin-secret
+  existingSecretSecretKey: harbor-secretkey-secret
+  cache:
+    enabled: false
+    expireHours: 24
+  trivy:
+    enabled: true
+    gitHubToken: ""
+
+minio-harbor:
+  minio-tenant:
+    tenant:
+      name: harbor-minio
+      pools:
+          size: 10Gi
+      buckets:
+        - name: harbor-bucket
+          objectLock: false
+          region: us-east-1
