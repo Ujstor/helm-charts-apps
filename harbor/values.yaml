@@ -6,7 +6,7 @@ harbor:
       certSource: auto
     ingress:
       hosts:
-        core: harbor.domain.com
+        core: harbor.test.ujstor.com
       className: "nginx"
       annotations:
         ingress.kubernetes.io/ssl-redirect: "true"
@@ -14,7 +14,7 @@ harbor:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-  externalURL: https://harbor.domain.com
+  externalURL: https://harbor.test.ujstor.com
   persistence:
     enabled: true
     resourcePolicy: "keep"
@@ -38,7 +38,7 @@ harbor:
       disableredirect: true
       type: s3
       s3:
-        existingSecret: "harbor-s3-secret"
+        existingSecret: harbor-s3-secret
         region: us-west-1
         bucket: harbor-bucket
         regionendpoint: http://minio.harbor.svc.cluster.local
@@ -50,6 +50,13 @@ harbor:
   trivy:
     enabled: true
     gitHubToken: ""
+  internalTLS:
+    enabled: false
+  ipFamily:
+    ipv4:
+      enabled: true
+    ipv6:
+      enabled: false
 
 minio-tenant:
   minio-tenant:
