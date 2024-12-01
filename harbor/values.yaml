@@ -6,7 +6,7 @@ harbor:
       certSource: auto
     ingress:
       hosts:
-        core: harbor.test.ujstor.com
+        core: harbor.domain.com
       className: "nginx"
       annotations:
         ingress.kubernetes.io/ssl-redirect: "true"
@@ -14,7 +14,7 @@ harbor:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-  externalURL: https://harbor.test.ujstor.com
+  externalURL: https://harbor.domain.com
   persistence:
     enabled: true
     resourcePolicy: "keep"

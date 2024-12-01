@@ -56,11 +56,11 @@ Harbor Helm chart configured by Ujstor
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.className | string | `"nginx"` |  |
-| harbor.expose.ingress.hosts.core | string | `"harbor.test.ujstor.com"` |  |
+| harbor.expose.ingress.hosts.core | string | `"harbor.domain.com"` |  |
 | harbor.expose.tls.certSource | string | `"auto"` |  |
 | harbor.expose.tls.enabled | bool | `true` |  |
 | harbor.expose.type | string | `"ingress"` |  |
-| harbor.externalURL | string | `"https://harbor.test.ujstor.com"` |  |
+| harbor.externalURL | string | `"https://harbor.domain.com"` |  |
 | harbor.internalTLS.enabled | bool | `false` |  |
 | harbor.ipFamily.ipv4.enabled | bool | `true` |  |
 | harbor.ipFamily.ipv6.enabled | bool | `false` |  |
