@@ -84,7 +84,7 @@ Harbor Helm chart configured by Ujstor
 | minio-harbor.minio-tenant.tenant.buckets[0].name | string | `"harbor-bucket"` |  |
 | minio-harbor.minio-tenant.tenant.buckets[0].objectLock | bool | `false` |  |
 | minio-harbor.minio-tenant.tenant.buckets[0].region | string | `"us-east-1"` |  |
-| minio-harbor.minio-tenant.tenant.name | string | `"harbor-minio"` |  |
+| minio-harbor.minio-tenant.tenant.name | string | `"harborminio"` |  |
 | minio-harbor.minio-tenant.tenant.pools.size | string | `"10Gi"` |  |
 
 

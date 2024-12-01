@@ -54,7 +54,7 @@ harbor:
 minio-harbor:
   minio-tenant:
     tenant:
-      name: harbor-minio
+      name: harborminio
       pools:
           size: 10Gi
       buckets:
