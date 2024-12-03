@@ -1,0 +1,28 @@
+gitlab:
+  version:
+  domain:
+  configureCertmanager:
+  certIssuerEmail:
+  ingressClassName:
+
+serviceAccount: true
+
+spec:
+  chart:
+    values:
+
+gitlab-runner:
+  gitlabUrl:
+  runners:
+    config: |
+      [[runners]]
+        [runners.kubernetes]
+          namespace = "{{.Release.Namespace}}"
+          image = "alpine"
+
+  secrets: []
+  # - name: myOtherSecret
+  #   items:
+  #     - key: key_one
+  #       path: path_one
+

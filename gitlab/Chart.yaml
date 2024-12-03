@@ -1,0 +1,11 @@
+apiVersion: v2
+name: gitlab
+description: A Helm chart for Kubernetes
+type: application
+version: 8.6.1
+appVersion: "17.6.1"
+
+dependencies:
+- name: gitlab-runner
+  version: 0.71.0
+  repository: https://charts.gitlab.io
