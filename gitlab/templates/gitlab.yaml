@@ -9,6 +9,8 @@ spec:
     values:
       global:
         edition: ce
+        pages:
+          enabled: true
         {{- if .Values.serviceAccount }}
         serviceAccount:
           enabled: true

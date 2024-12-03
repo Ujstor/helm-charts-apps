@@ -39,6 +39,34 @@ Gitea Helm chart configured by Ujstor
 
 ![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)
 
+# gitlab
+
+![Version: 8.6.1](https://img.shields.io/badge/Version-8.6.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 17.6.1](https://img.shields.io/badge/AppVersion-17.6.1-informational?style=flat-square)
+
+A Helm chart for Kubernetes
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.gitlab.io | gitlab-runner | 0.71.0 |
+
+## Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| gitlab-runner.gitlabUrl | string | `nil` |  |
+| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n"` |  |
+| gitlab-runner.secrets | list | `[]` |  |
+| gitlab.certIssuerEmail | string | `"astipan@gmail.com"` |  |
+| gitlab.domain | string | `"k3s.ujstor.com"` |  |
+| gitlab.ingressClassName | string | `nil` |  |
+| gitlab.version | string | `nil` |  |
+| serviceAccount | bool | `true` |  |
+
+
+![purple-divider](https://user-images.githubusercontent.com/7065401/52071927-c1cd7100-2562-11e9-908a-dde91ba14e59.png)
+
 # harbor
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.0](https://img.shields.io/badge/AppVersion-2.12.0-informational?style=flat-square)
@@ -70,6 +98,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.expose.ingress.hosts.core | string | `"harbor.domain.com"` |  |
 | harbor.expose.tls.certSource | string | `"auto"` |  |
 | harbor.expose.tls.enabled | bool | `true` |  |
+| harbor.expose.tls.secret.secretName | string | `"harbor-ingress"` |  |
 | harbor.expose.type | string | `"ingress"` |  |
 | harbor.externalURL | string | `"https://harbor.domain.com"` |  |
 | harbor.internalTLS.enabled | bool | `false` |  |

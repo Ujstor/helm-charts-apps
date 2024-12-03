@@ -1,15 +1,14 @@
 gitlab:
   version:
-  domain:
-  configureCertmanager:
-  certIssuerEmail:
+  domain: k3s.ujstor.com
+  certIssuerEmail: astipan@gmail.com
   ingressClassName:
 
 serviceAccount: true
 
-spec:
-  chart:
-    values:
+# spec:
+#   chart:
+#     values:
 
 gitlab-runner:
   gitlabUrl:
@@ -25,4 +24,3 @@ gitlab-runner:
   #   items:
   #     - key: key_one
   #       path: path_one
-

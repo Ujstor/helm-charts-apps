@@ -4,6 +4,8 @@ harbor:
     tls:
       enabled: true
       certSource: auto
+      secret:
+        secretName: harbor-ingress
     ingress:
       hosts:
         core: harbor.domain.com

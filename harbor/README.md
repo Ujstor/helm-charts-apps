@@ -29,6 +29,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.expose.ingress.hosts.core | string | `"harbor.domain.com"` |  |
 | harbor.expose.tls.certSource | string | `"auto"` |  |
 | harbor.expose.tls.enabled | bool | `true` |  |
+| harbor.expose.tls.secret.secretName | string | `"harbor-ingress"` |  |
 | harbor.expose.type | string | `"ingress"` |  |
 | harbor.externalURL | string | `"https://harbor.domain.com"` |  |
 | harbor.internalTLS.enabled | bool | `false` |  |
