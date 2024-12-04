@@ -1,7 +1,7 @@
 all: ur clean package index
 	@echo "Packaging complete and index.yaml updated."
 
-CHARTS := gitea plausible-analytics wordpress uptime-kuma harbor
+CHARTS := gitea plausible-analytics wordpress uptime-kuma harbor gitlab
 
 REPO_URL := https://Ujstor.github.io/helm-charts-apps
 

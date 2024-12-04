@@ -4,7 +4,7 @@ gitlab:
   certIssuerEmail: mail@mail.com
   ingressClassName:
 
-# If release ns is not the same as the operatir ns
+# If release ns is not the same as the operator ns
 serviceAccount:
     create: true
     annotations: {}
