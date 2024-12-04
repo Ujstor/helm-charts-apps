@@ -10,7 +10,7 @@ serviceAccount:
     annotations: {}
 
 gitlab-runner:
-  gitlabUrl: http://gitlab-webservice-default.gitlab-instance.svc.cluster.local:8181  # <svc-name>.<namespace>.svc.cluster.local
+  gitlabUrl: http://gitlab-webservice-default.gitlab.svc.cluster.local:8181  # <svc-name>.<namespace>.svc.cluster.local
   rbac:
     create: true
     rules:

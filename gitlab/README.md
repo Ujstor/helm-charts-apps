@@ -15,7 +15,7 @@ A Helm chart for Kubernetes
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | gitlab-runner.concurrent | int | `10` |  |
-| gitlab-runner.gitlabUrl | string | `"http://gitlab-webservice-default.gitlab-instance.svc.cluster.local:8181"` |  |
+| gitlab-runner.gitlabUrl | string | `"http://gitlab-webservice-default.gitlab.svc.cluster.local:8181"` |  |
 | gitlab-runner.rbac.create | bool | `true` |  |
 | gitlab-runner.rbac.rules[0].apiGroups[0] | string | `""` |  |
 | gitlab-runner.rbac.rules[0].resources[0] | string | `"pods"` |  |

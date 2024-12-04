@@ -14,6 +14,27 @@ spec:
           enabled: true
         nginx-ingress:
           enabled: false
+        prometheus:
+          install: false
+        certmanager:
+          install: false
+        gitlab:
+          gitlab-shell:
+            minReplicas: 1
+            maxReplicas: 1
+          kas:
+            minReplicas: 1
+            maxReplicas: 1
+          sidekiq:
+            minReplicas: 1
+            maxReplicas: 1
+          webservice:
+            minReplicas: 1
+            maxReplicas: 1
+        registry:
+          hpa:
+            minReplicas: 1
+            maxReplicas: 1
         hosts:
           domain: {{ .Values.gitlab.domain | default "domain.com" }}
         ingress:
