@@ -2,7 +2,6 @@ apiVersion: apps.gitlab.com/v1beta1
 kind: GitLab
 metadata:
   name: {{ .Release.Name }}
-  namespace: {{ .Release.Namespace }}
 spec:
   chart:
     version: {{ .Values.gitlab.version | default .Chart.Version }}
@@ -11,14 +10,10 @@ spec:
         edition: ce
         pages:
           enabled: true
-        {{- if .Values.serviceAccount }}
-        serviceAccount:
-          enabled: true
-          create: true
-          automountServiceAccountToken: true
-        {{- end }}
         gitlab-runner:
           enabled: true
+        nginx-ingress:
+          enabled: false
         hosts:
           domain: {{ .Values.gitlab.domain | default "domain.com" }}
         ingress:

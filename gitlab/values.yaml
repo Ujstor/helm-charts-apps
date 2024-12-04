@@ -1,26 +1,47 @@
 gitlab:
   version:
-  domain: k3s.ujstor.com
-  certIssuerEmail: astipan@gmail.com
+  domain: domain.com
+  certIssuerEmail: mail@mail.com
   ingressClassName:
 
-serviceAccount: true
-
-# spec:
-#   chart:
-#     values:
+# If release ns is not the same as the operatir ns
+serviceAccount:
+    create: true
+    annotations: {}
 
 gitlab-runner:
-  gitlabUrl:
+  gitlabUrl: http://gitlab-webservice-default.gitlab-instance.svc.cluster.local:8181  # <svc-name>.<namespace>.svc.cluster.local
+  rbac:
+    create: true
+    rules:
+      - apiGroups: [""]
+        resources: ["pods"]
+        verbs: ["get", "list", "watch", "create", "delete"]
+      - apiGroups: [""]
+        resources: ["pods/exec"]
+        verbs: ["create", "patch", "delete"]
+      - apiGroups: [""]
+        resources: ["pods/attach"]
+        verbs: ["list", "get", "create", "delete", "update"]
+      - apiGroups: [""]
+        resources: ["secrets"]
+        verbs: ["list", "get"]
+      - apiGroups: [""]
+        resources: ["configmaps"]
+        verbs: ["list", "get", "create", "delete"]
+  concurrent: 10  
   runners:
     config: |
       [[runners]]
         [runners.kubernetes]
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
-
-  secrets: []
-  # - name: myOtherSecret
-  #   items:
-  #     - key: key_one
-  #       path: path_one
+          privileged = false
+          test
+  # Name of the secret containing registration token
+  # <release-name>-gitlab-runner-secret
+  secrets:
+    - name: gitlab-gitlab-runner-secret
+      items:
+        - key: runner-registration-token
+          path: runner-registration-token
