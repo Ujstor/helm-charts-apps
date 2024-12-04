@@ -29,7 +29,7 @@ gitlab-runner:
       - apiGroups: [""]
         resources: ["configmaps"]
         verbs: ["list", "get", "create", "delete"]
-  concurrent: 10  
+  concurrent: 10
   runners:
     config: |
       [[runners]]
@@ -37,7 +37,7 @@ gitlab-runner:
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
           privileged = false
-          test
+
   # Name of the secret containing registration token
   # <release-name>-gitlab-runner-secret
   secrets:

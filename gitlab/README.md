@@ -46,7 +46,7 @@ A Helm chart for Kubernetes
 | gitlab-runner.rbac.rules[4].verbs[1] | string | `"get"` |  |
 | gitlab-runner.rbac.rules[4].verbs[2] | string | `"create"` |  |
 | gitlab-runner.rbac.rules[4].verbs[3] | string | `"delete"` |  |
-| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n    test\n"` |  |
+| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n"` |  |
 | gitlab-runner.secrets[0].items[0].key | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].items[0].path | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
