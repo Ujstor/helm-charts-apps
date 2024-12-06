@@ -13,19 +13,6 @@ spec:
       edition: ce
       nginx-ingress:
         enabled: false
-      kas:
-        minReplicas: 1
-        maxReplicas: 1
-      gitlab-shell:
-        minReplicas: 1
-        maxReplicas: 1
-      sidekiq:
-        minReplicas: 1
-        maxReplicas: 1
-      webservice:
-        replicaCount: 1
-        minReplicas: 1
-        maxReplicas: 1
       global:
         pages:
           enabled: true
