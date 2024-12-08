@@ -148,7 +148,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.persistence.imageChartStorage.s3.multipartcopychunksize | string | `"33554432"` |  |
 | harbor.persistence.imageChartStorage.s3.multipartcopymaxconcurrency | int | `100` |  |
 | harbor.persistence.imageChartStorage.s3.region | string | `"us-east-1"` |  |
-| harbor.persistence.imageChartStorage.s3.regionendpoint | string | `"http://minio.harbor.svc.cluster.local:9000"` |  |
+| harbor.persistence.imageChartStorage.s3.regionendpoint | string | `"http://minio-harbor-hl.harbor.svc.cluster.local:9000"` |  |
 | harbor.persistence.imageChartStorage.s3.rootdirectory | string | `"/registry"` |  |
 | harbor.persistence.imageChartStorage.s3.secure | bool | `false` |  |
 | harbor.persistence.imageChartStorage.s3.skipverify | bool | `true` |  |

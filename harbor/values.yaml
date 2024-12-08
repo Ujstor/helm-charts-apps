@@ -48,7 +48,7 @@ harbor:
         existingSecret: harbor-s3-secret
         region: us-east-1
         bucket: harbor-bucket
-        regionendpoint: http://minio.harbor.svc.cluster.local:9000
+        regionendpoint: http://minio-harbor-hl.harbor.svc.cluster.local:9000
         secure: false
         skipverify: true
         v4auth: true
