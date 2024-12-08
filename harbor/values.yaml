@@ -11,8 +11,8 @@ harbor:
         core: harbor.domain.com
       className: "nginx"
       annotations:
-        ingress.kubernetes.io/ssl-redirect: "true"
-        ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
@@ -42,7 +42,7 @@ harbor:
       type: s3
       s3:
         existingSecret: harbor-s3-secret
-        region: us-west-1
+        region: us-east-1
         bucket: harbor-bucket
         regionendpoint: http://minio.harbor.svc.cluster.local
   existingSecretAdminPassword: harbor-admin-secret

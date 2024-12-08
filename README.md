@@ -123,10 +123,10 @@ Harbor Helm chart configured by Ujstor
 | harbor.existingSecretAdminPassword | string | `"harbor-admin-secret"` |  |
 | harbor.existingSecretSecretKey | string | `"harbor-secretkey-secret"` |  |
 | harbor.expose.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
-| harbor.expose.ingress.annotations."ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
-| harbor.expose.ingress.annotations."ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
+| harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"0"` |  |
+| harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.className | string | `"nginx"` |  |
 | harbor.expose.ingress.hosts.core | string | `"harbor.domain.com"` |  |
@@ -142,7 +142,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.persistence.imageChartStorage.disableredirect | bool | `true` |  |
 | harbor.persistence.imageChartStorage.s3.bucket | string | `"harbor-bucket"` |  |
 | harbor.persistence.imageChartStorage.s3.existingSecret | string | `"harbor-s3-secret"` |  |
-| harbor.persistence.imageChartStorage.s3.region | string | `"us-west-1"` |  |
+| harbor.persistence.imageChartStorage.s3.region | string | `"us-east-1"` |  |
 | harbor.persistence.imageChartStorage.s3.regionendpoint | string | `"http://minio.harbor.svc.cluster.local"` |  |
 | harbor.persistence.imageChartStorage.type | string | `"s3"` |  |
 | harbor.persistence.persistentVolumeClaim.database.accessMode | string | `"ReadWriteOnce"` |  |
