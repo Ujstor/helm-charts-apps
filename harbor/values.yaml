@@ -13,11 +13,15 @@ harbor:
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/proxy-body-size: "0"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+        nginx.ingress.kubernetes.io/proxy-buffering: "off"
         cert-manager.io/cluster-issuer: "letsencrypt"
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+        nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
   externalURL: https://harbor.domain.com
+  registry:
+    relativeurls: true
   persistence:
     enabled: true
     resourcePolicy: "keep"
@@ -44,7 +48,14 @@ harbor:
         existingSecret: harbor-s3-secret
         region: us-east-1
         bucket: harbor-bucket
-        regionendpoint: http://minio.harbor.svc.cluster.local
+        regionendpoint: http://minio.harbor.svc.cluster.local:9000
+        secure: false
+        skipverify: true
+        v4auth: true
+        chunksize: "5242880"
+        multipartcopychunksize: "33554432"
+        multipartcopymaxconcurrency: 100
+        rootdirectory: /registry
   existingSecretAdminPassword: harbor-admin-secret
   existingSecretSecretKey: harbor-secretkey-secret
   cache:
