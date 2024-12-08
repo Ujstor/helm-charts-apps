@@ -50,12 +50,15 @@ harbor:
         bucket: harbor-bucket
         regionendpoint: http://minio-harbor-hl.harbor.svc.cluster.local:9000
         secure: false
+        encrypt: false
         skipverify: true
         v4auth: true
         chunksize: "5242880"
         multipartcopychunksize: "33554432"
-        multipartcopymaxconcurrency: 100
+        multipartcopymaxconcurrency: 50
         rootdirectory: /registry
+        storageclass: STANDARD
+
   existingSecretAdminPassword: harbor-admin-secret
   existingSecretSecretKey: harbor-secretkey-secret
   cache:
