@@ -27,7 +27,7 @@ Harbor Helm chart configured by Ujstor
 | harbor.expose.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect" | string | `"true"` |  |
 | harbor.expose.ingress.className | string | `"nginx"` |  |
 | harbor.expose.ingress.hosts.core | string | `"harbor.domain.com"` |  |
-| harbor.expose.tls.certSource | string | `"auto"` |  |
+| harbor.expose.tls.certSource | string | `"none"` |  |
 | harbor.expose.tls.enabled | bool | `true` |  |
 | harbor.expose.tls.secret.secretName | string | `"harbor-ingress"` |  |
 | harbor.expose.type | string | `"ingress"` |  |
