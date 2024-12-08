@@ -3,7 +3,7 @@ harbor:
     type: ingress
     tls:
       enabled: true
-      certSource: none
+      certSource: secret
       secret:
         secretName: harbor-ingress
     ingress:
