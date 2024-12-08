@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.22.3
-    created: "2024-12-08T17:26:20.9328921+01:00"
+    created: "2024-12-08T18:00:17.918513647+01:00"
     dependencies:
     - name: gitea
       repository: https://dl.gitea.com/charts/
@@ -12,7 +12,7 @@ entries:
       repository: https://ujstor.github.io/helm-charts-system
       version: 1.0.0
     description: Gitea Helm chart configured by Ujstor
-    digest: a1a888ea782980540f823c5b9c188c982b153724a607d98105a404867fc0226b
+    digest: 1bf3ce9ea134c120d63f2e95be7b489f90e323d1314c0b76aa8e2198d02b16b1
     name: gitea
     type: application
     urls:
@@ -21,13 +21,13 @@ entries:
   gitlab:
   - apiVersion: v2
     appVersion: 17.6.1
-    created: "2024-12-08T17:26:20.934752283+01:00"
+    created: "2024-12-08T18:00:17.919628949+01:00"
     dependencies:
     - name: gitlab-runner
       repository: https://charts.gitlab.io
       version: 0.71.0
     description: A Helm chart for Kubernetes
-    digest: 93f748c99fb985cb289928424dc12765c3ec387dc831e235b00c56abfafa0c1d
+    digest: 5227d012a2dc2d9aa938347002ff0d074e72fdd503caba6dc4afd6d4f79adaca
     name: gitlab
     type: application
     urls:
@@ -36,7 +36,7 @@ entries:
   harbor:
   - apiVersion: v2
     appVersion: 2.12.0
-    created: "2024-12-08T17:26:20.93855717+01:00"
+    created: "2024-12-08T18:00:17.923971012+01:00"
     dependencies:
     - name: harbor
       repository: https://helm.goharbor.io
@@ -45,7 +45,7 @@ entries:
       repository: https://ujstor.github.io/helm-charts-system
       version: 1.0.0
     description: Harbor Helm chart configured by Ujstor
-    digest: fb7773769a80e74f5a54d25e4fdefaef1e6e8920a32d866a5cc2982900359361
+    digest: f9655976bf9d7105a561e27f966986c4aacd3e1ec0ccf7bfc4d57f516daf170c
     name: harbor
     type: application
     urls:
@@ -54,7 +54,7 @@ entries:
   plausible-analytics:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2024-12-08T17:26:20.945538504+01:00"
+    created: "2024-12-08T18:00:17.931559898+01:00"
     dependencies:
     - name: plausible-analytics
       repository: https://imio.github.io/helm-charts
@@ -63,7 +63,7 @@ entries:
       repository: https://ujstor.github.io/helm-charts-system
       version: 1.0.0
     description: Plausible-analytics Helm chart configured by Ujstor
-    digest: 25452ccf2c5f836c8840aa448389d00e5a1267940756f66672a2afc6bc88a96d
+    digest: 4481ba35170cb8137bde4ed25e0117b9e5dc95697a8b5d933cd957a9ab8e04ec
     name: plausible-analytics
     type: application
     urls:
@@ -72,13 +72,13 @@ entries:
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.23.13
-    created: "2024-12-08T17:26:20.946134774+01:00"
+    created: "2024-12-08T18:00:17.932186411+01:00"
     dependencies:
     - name: uptime-kuma
       repository: https://helm.irsigler.cloud
       version: 2.20.0
     description: Uptime Kuma Helm chart configured by Ujstor
-    digest: 078415499bf6289cdd9d5de9a65c00a279267a18d5610d89bc629d1eb6be9d19
+    digest: 72c5caefe6431fa7ae2f9beaf2870973ee409ddfdaaac2239562a1cf14109145
     name: uptime-kuma
     type: application
     urls:
@@ -87,16 +87,16 @@ entries:
   wordpress:
   - apiVersion: v2
     appVersion: 6.7.1
-    created: "2024-12-08T17:26:20.952863183+01:00"
+    created: "2024-12-08T18:00:17.938819698+01:00"
     dependencies:
     - name: wordpress
       repository: https://charts.bitnami.com/bitnami
       version: 24.0.7
     description: Wordpress Helm chart configured by Ujstor
-    digest: 3c18c1009260e7580e5d68a19311d95961c24a6d940301abdd871399c79f7ec8
+    digest: ea65b8cebf523a1c6cc990d15a32830a11c768f6370d057e92b7c3cadb03bfcc
     name: wordpress
     type: application
     urls:
     - https://Ujstor.github.io/helm-charts-apps/wordpress-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-08T17:26:20.911280058+01:00"
+generated: "2024-12-08T18:00:17.902430198+01:00"
