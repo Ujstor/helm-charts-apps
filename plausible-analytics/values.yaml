@@ -25,6 +25,12 @@ plausible-analytics:
       cpu: 100m
       memory: 128Mi
 
+  postgresql:
+    enabled: true
+    primary:
+      persistence:
+        enabled: true
+
 customIngress:
   enabled: false
   className: "nginx"
