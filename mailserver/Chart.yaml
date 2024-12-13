@@ -1,0 +1,12 @@
+apiVersion: v2
+name: docker-mailserver
+description: Mailserver chart configured by Ujstor
+type: application
+version: 1.0.0
+appVersion: "14.0.0"
+
+dependencies:
+- name: docker-mailserver
+  version: 4.0.7
+  repository: https://docker-mailserver.github.io/docker-mailserver-helm
+
