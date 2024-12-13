@@ -10,10 +10,10 @@ spec:
         hpa:
           minReplicas: 1
           maxReplicas: 1
-      edition: ce
       nginx-ingress:
         enabled: false
       global:
+        edition: ce
         pages:
           enabled: true
         gitlab-runner:

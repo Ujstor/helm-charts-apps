@@ -20,6 +20,9 @@ gitea:
   gitea:
     admin:
       existingSecret: gitea-admin-secret
+  config:
+    service:
+      DISABLE_REGISTRATION: true
 
 secret-store:
   secretStore:
