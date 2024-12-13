@@ -3,7 +3,7 @@ name: plausible-analytics
 description: Plausible-analytics Helm chart configured by Ujstor
 type: application
 version: 1.0.0
-appVersion: "2.1.1"
+appVersion: "2.0.0"
 
 dependencies:
 - name: plausible-analytics

@@ -188,7 +188,7 @@ Harbor Helm chart configured by Ujstor
 
 # plausible-analytics
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.1.1](https://img.shields.io/badge/AppVersion-2.1.1-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.0.0](https://img.shields.io/badge/AppVersion-2.0.0-informational?style=flat-square)
 
 Plausible-analytics Helm chart configured by Ujstor
 
@@ -216,12 +216,9 @@ Plausible-analytics Helm chart configured by Ujstor
 | customIngress.tls[0].hosts[0] | string | `"plausible-analytics.local"` |  |
 | customIngress.tls[0].secretName | string | `"plausible-analytics-tls"` |  |
 | plausible-analytics.baseURL | string | `"http://plausible-analytics.local"` |  |
-| plausible-analytics.disableRegistration | bool | `false` |  |
-| plausible-analytics.image.pullPolicy | string | `"IfNotPresent"` |  |
-| plausible-analytics.image.repository | string | `"ghcr.io/plausible/community-edition"` |  |
+| plausible-analytics.disableRegistration | bool | `true` |  |
 | plausible-analytics.image.repository | string | `"docker.io/plausible/analytics"` |  |
 | plausible-analytics.image.tag | string | `"v2.0.0"` |  |
-| plausible-analytics.image.tag | string | `"v2.1.4"` |  |
 | plausible-analytics.logFailedLoginAttempts | bool | `true` |  |
 | plausible-analytics.postgresql.enabled | bool | `true` |  |
 | plausible-analytics.postgresql.primary.persistence.enabled | bool | `true` |  |
