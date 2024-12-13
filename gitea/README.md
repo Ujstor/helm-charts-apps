@@ -15,8 +15,10 @@ Gitea Helm chart configured by Ujstor
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| gitea.config.service.DISABLE_REGISTRATION | bool | `true` |  |
 | gitea.gitea.admin.existingSecret | string | `"gitea-admin-secret"` |  |
+| gitea.gitea.config.service.DISABLE_REGISTRATION | bool | `true` |  |
+| gitea.gitea.config.service.REGISTER_MANUAL_CONFIRM | bool | `false` |  |
+| gitea.gitea.config.service.REQUIRE_SIGNIN_VIEW | bool | `true` |  |
 | gitea.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | gitea.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | gitea.ingress.annotations."nginx.ingress.kubernetes.io/force-ssl-redirect" | string | `"true"` |  |
