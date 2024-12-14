@@ -85,7 +85,7 @@ minio-tenant:
         - servers: 1
           name: pool-0
           volumesPerServer: 1
-          size: 20Gi
+          size: 50Gi
       buckets:
         - name: harbor-bucket
           objectLock: false

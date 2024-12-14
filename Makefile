@@ -1,4 +1,4 @@
-all: ur clean package index
+all: ur package index
 	@echo "Packaging complete and index.yaml updated."
 
 CHARTS := gitea plausible-analytics wordpress uptime-kuma harbor gitlab mailserver

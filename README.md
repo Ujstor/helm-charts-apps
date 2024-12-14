@@ -106,7 +106,7 @@ A Helm chart for Kubernetes
 
 # harbor
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.0](https://img.shields.io/badge/AppVersion-2.12.0-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.0](https://img.shields.io/badge/AppVersion-2.12.0-informational?style=flat-square)
 
 Harbor Helm chart configured by Ujstor
 
@@ -115,7 +115,7 @@ Harbor Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://helm.goharbor.io | harbor | 1.16.0 |
-| https://ujstor.github.io/helm-charts-system | minio-tenant | 1.0.0 |
+| https://ujstor.github.io/helm-charts-system | minio-tenant | 1.1.0 |
 
 ## Values
 
@@ -180,7 +180,7 @@ Harbor Helm chart configured by Ujstor
 | minio-tenant.minio-tenant.tenant.name | string | `"minio-harbor"` |  |
 | minio-tenant.minio-tenant.tenant.pools[0].name | string | `"pool-0"` |  |
 | minio-tenant.minio-tenant.tenant.pools[0].servers | int | `1` |  |
-| minio-tenant.minio-tenant.tenant.pools[0].size | string | `"20Gi"` |  |
+| minio-tenant.minio-tenant.tenant.pools[0].size | string | `"50Gi"` |  |
 | minio-tenant.minio-tenant.tenant.pools[0].volumesPerServer | int | `1` |  |
 
 
