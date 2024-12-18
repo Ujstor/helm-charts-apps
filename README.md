@@ -26,6 +26,9 @@ Gitea Helm chart configured by Ujstor
 | gitea.ingress.annotations."cert-manager.io/cluster-issuer" | string | `"letsencrypt"` |  |
 | gitea.ingress.annotations."nginx.ingress.kubernetes.io/backend-protocol" | string | `"HTTP"` |  |
 | gitea.ingress.annotations."nginx.ingress.kubernetes.io/force-ssl-redirect" | string | `"true"` |  |
+| gitea.ingress.annotations."nginx.ingress.kubernetes.io/proxy-body-size" | string | `"2048m"` |  |
+| gitea.ingress.annotations."nginx.ingress.kubernetes.io/proxy-read-timeout" | string | `"1200"` |  |
+| gitea.ingress.annotations."nginx.ingress.kubernetes.io/proxy-send-timeout" | string | `"1200"` |  |
 | gitea.ingress.className | string | `"nginx"` |  |
 | gitea.ingress.enabled | bool | `false` |  |
 | gitea.ingress.hosts[0].host | string | `"gitea.domain.com"` |  |

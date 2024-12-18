@@ -1,15 +1,19 @@
-all: ur package index
+all: update-repos ur package index
 	@echo "Packaging complete and index.yaml updated."
 
 CHARTS := gitea plausible-analytics wordpress uptime-kuma harbor gitlab mailserver
 
 REPO_URL := https://Ujstor.github.io/helm-charts-apps
 
+update-repos:
+	@echo "Updating Helm repositories..."
+	@helm repo update
+
 package: $(CHARTS)
 
 $(CHARTS):
 	@echo "Packaging $@ chart..."
-	@helm dependency update $@ || helm dependency build $@
+	@helm dependency update --skip-refresh $@ || helm dependency build --skip-refresh $@
 	helm package $@ --destination .
 index: package
 	@echo "Generating index.yaml..."
