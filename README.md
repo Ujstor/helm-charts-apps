@@ -240,6 +240,9 @@ Plausible-analytics Helm chart configured by Ujstor
 | customIngress.tls[0].hosts[0] | string | `"plausible-analytics.local"` |  |
 | customIngress.tls[0].secretName | string | `"plausible-analytics-tls"` |  |
 | plausible-analytics.baseURL | string | `"http://plausible-analytics.local"` |  |
+| plausible-analytics.clickhouse.enabled | bool | `true` |  |
+| plausible-analytics.clickhouse.persistence.enabled | bool | `true` |  |
+| plausible-analytics.clickhouse.zookeeper.enabled | bool | `true` |  |
 | plausible-analytics.disableRegistration | bool | `true` |  |
 | plausible-analytics.image.repository | string | `"docker.io/plausible/analytics"` |  |
 | plausible-analytics.image.tag | string | `"v2.0.0"` |  |

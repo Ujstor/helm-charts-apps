@@ -26,6 +26,12 @@ plausible-analytics:
     primary:
       persistence:
         enabled: true
+  clickhouse:
+    enabled: true
+    zookeeper:
+      enabled: true
+    persistence:
+      enabled: true
 
 customIngress:
   enabled: false
