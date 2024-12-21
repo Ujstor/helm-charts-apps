@@ -28,8 +28,6 @@ plausible-analytics:
         enabled: true
   clickhouse:
     enabled: true
-    zookeeper:
-      enabled: true
     persistence:
       enabled: true
 
