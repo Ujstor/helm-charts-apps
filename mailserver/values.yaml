@@ -1,2 +1,13 @@
-env:
-  OVERRIDE_HOSTNAME: mail.example.com
+dockermailserver:
+  deployment:
+    env:
+      OVERRIDE_HOSTNAME: mail.domain.com
+  certificate: mailserver-tls
+
+certificates:
+  organization: Organization
+  duration: 2160h
+  renewBefore: 360h
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: Issuer

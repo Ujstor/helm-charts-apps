@@ -1,0 +1,21 @@
+{{- if .Values.dockermailserver.certificate }}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "{{ .Release.Name }}-mailserver-cert"
+  namespace: {{ .Release.Namespace }}
+spec:
+  secretName: "{{ .Values.dockermailserver.certificate }}"
+  duration: {{ .Values.certificates.duration }}
+  renewBefore: {{ .Values.certificates.renewBefore }}
+  subject:
+    organizations:
+      - {{ .Values.certificates.organization }}
+  commonName: {{ .Values.dockermailserver.deployment.env.OVERRIDE_HOSTNAME }}
+  dnsNames:
+    - {{ .Values.dockermailserver.deployment.env.OVERRIDE_HOSTNAME }}
+  issuerRef:
+    name: {{ .Values.certificates.issuerRef.name }}
+    kind: {{ .Values.certificates.issuerRef.kind }}
+{{- end }}
