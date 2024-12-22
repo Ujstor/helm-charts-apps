@@ -59,4 +59,4 @@ ur update-readme: docs
 		fi \
 	done
 
-.PHONY: d docs hdi helm-docs ur update-readme package $(CHARTS) index clean all
+.PHONY: d docs hdi helm-docs ur update-readme package $(CHARTS) index clean all update-repos
