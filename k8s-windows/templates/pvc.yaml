@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ range .Values.volumes }}{{ if eq .name "storage" }}{{ .persistentVolumeClaim.claimName }}{{ end }}{{ end }}
+  labels:
+    {{- include "k8s-windows.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ range .Values.resources }}{{ if eq .name "DISK_SIZE" }}{{ .value }}{{ end }}{{ end }}

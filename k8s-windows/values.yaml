@@ -1,0 +1,103 @@
+replicaCount: 1
+image:
+  repository: harbor.k3s0.ujstor.com/docker/k8s-windows
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+imagePullSecrets:
+  - name: regcred
+
+nameOverride: ""
+fullnameOverride: ""
+podAnnotations: {}
+podLabels: {}
+nodeSelector: {}
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: win-basic-auth-secret
+    nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
+  hosts:
+    - host: win.test.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+   - secretName: win-tls
+     hosts:
+       - win.test.com
+
+podSecurityContext:
+  privileged: true
+securityContext:
+  privileged: true
+  capabilities:
+    add:
+     - NET_ADMIN
+     - SYS_ADMIN
+
+terminationGracePeriodSeconds: 120
+
+service:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8006
+      protocol: TCP
+    - name: tcp-3389
+      port: 3389
+      targetPort: 3389
+      protocol: TCP
+    - name: udp-3389
+      port: 3389
+      targetPort: 3389
+      protocol: UDP
+
+resources:
+  - name: VERSION
+    value: "10"
+  - name: RAM_SIZE
+    value: "8G"
+  - name: CPU_CORES
+    value: "12"
+  - name: DISK_SIZE
+    value: "120G"
+
+volumes:
+  - name: storage
+    persistentVolumeClaim:
+      claimName: windows-pvc
+  - hostPath:
+      path: /dev/kvm
+    name: dev-kvm
+  - hostPath:
+      path: /dev/net/tun
+      type: CharDevice
+    name: dev-tun
+
+volumeMounts:
+  - mountPath: /storage
+    name: storage
+  - mountPath: /dev/kvm
+    name: dev-kvm
+  - mountPath: /dev/net/tun
+    name: dev-tun
+    type: CharDevice
+
+secret-store:
+  secretStore:
+    clusterWide: false
+    provider:
+      type: kubernetes
+      kubernetes:
+        auth:
+          serviceAccount:
+            create: true
+            name: "win-secret-store-sa"
