@@ -23,5 +23,5 @@ metadata:
   namespace: mailserver
 type: Opaque
 stringData:
-  api-key: <Cloudflare-api-key>
+  api-key: ""
 ---

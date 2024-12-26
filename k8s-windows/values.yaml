@@ -44,6 +44,10 @@ securityContext:
 
 terminationGracePeriodSeconds: 120
 
+# podSettings:
+#   hostNetwork: true
+#   dnsPolicy: ClusterFirstWithHostNet
+
 service:
   type: ClusterIP
   ports:

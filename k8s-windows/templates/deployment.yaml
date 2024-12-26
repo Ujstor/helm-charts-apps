@@ -21,8 +21,14 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
+      {{- if hasKey .Values "podSettings" }}
+      {{- if hasKey .Values.podSettings "hostNetwork" }}
+      hostNetwork: {{ .Values.podSettings.hostNetwork }}
+      {{- end }}
+      {{- if hasKey .Values.podSettings "dnsPolicy" }}
+      dnsPolicy: {{ .Values.podSettings.dnsPolicy }}
+      {{- end }}
+      {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
