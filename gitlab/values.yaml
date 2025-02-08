@@ -31,20 +31,21 @@ gitlab-runner:
     create: true
     rules:
       - apiGroups: [""]
-        resources: ["pods"]
-        verbs: ["get", "list", "watch", "create", "delete"]
-      - apiGroups: [""]
-        resources: ["pods/exec"]
-        verbs: ["create", "patch", "delete"]
-      - apiGroups: [""]
-        resources: ["pods/attach"]
-        verbs: ["list", "get", "create", "delete", "update"]
+        resources: ["pods", "pods/exec", "pods/attach"]
+        verbs: ["get", "list", "watch", "create", "patch", "update", "delete"]
       - apiGroups: [""]
         resources: ["secrets"]
-        verbs: ["list", "get", "create", "delete"]
+        verbs: ["get", "list", "watch", "create", "patch", "update", "delete"]
       - apiGroups: [""]
         resources: ["configmaps"]
-        verbs: ["list", "get", "create", "delete"]
+        verbs: ["get", "list", "watch", "create", "patch", "update", "delete"]
+      - apiGroups: [""]
+        resources: ["services"]
+        verbs: ["get", "list", "watch"]
+      - apiGroups: [""]
+        resources: ["serviceaccounts"]
+        verbs: ["get", "list", "watch"]
+
   concurrent: 10
   runners:
     config: |
@@ -53,6 +54,8 @@ gitlab-runner:
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
           privileged = false
+          service_account = "gitlab-gitlab-runner"
+          service_account_overwrite_allowed = "*"
 
   # Name of the secret containing registration token
   # <release-name>-gitlab-runner-secret
