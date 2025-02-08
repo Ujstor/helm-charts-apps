@@ -36,6 +36,8 @@ ingress:
 podSecurityContext:
   privileged: true
 securityContext:
+  runAsUser: 0
+  fsGroup: 0
   privileged: true
   capabilities:
     add:

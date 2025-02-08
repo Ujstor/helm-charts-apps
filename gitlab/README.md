@@ -52,7 +52,17 @@ A Helm chart for Kubernetes
 | gitlab-runner.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
 | gitlab.certIssuerEmail | string | `"mail@mail.com"` |  |
 | gitlab.domain | string | `"domain.com"` |  |
+| gitlab.email.display_name | string | `"GitLab"` |  |
+| gitlab.email.from | string | `"gitlab@example.com"` |  |
+| gitlab.email.reply_to | string | `"noreply@example.com"` |  |
 | gitlab.ingressClassName | string | `nil` |  |
+| gitlab.smtp.address | string | `"smtp.example.com"` |  |
+| gitlab.smtp.authentication | string | `"plain"` |  |
+| gitlab.smtp.enabled | bool | `true` |  |
+| gitlab.smtp.password.key | string | `"password"` |  |
+| gitlab.smtp.password.secret | string | `"smtp-password"` |  |
+| gitlab.smtp.tls | bool | `true` |  |
+| gitlab.smtp.user_name | string | `"example"` |  |
 | gitlab.version | string | `nil` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |

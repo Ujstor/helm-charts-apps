@@ -99,7 +99,17 @@ A Helm chart for Kubernetes
 | gitlab-runner.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
 | gitlab.certIssuerEmail | string | `"mail@mail.com"` |  |
 | gitlab.domain | string | `"domain.com"` |  |
+| gitlab.email.display_name | string | `"GitLab"` |  |
+| gitlab.email.from | string | `"gitlab@example.com"` |  |
+| gitlab.email.reply_to | string | `"noreply@example.com"` |  |
 | gitlab.ingressClassName | string | `nil` |  |
+| gitlab.smtp.address | string | `"smtp.example.com"` |  |
+| gitlab.smtp.authentication | string | `"plain"` |  |
+| gitlab.smtp.enabled | bool | `true` |  |
+| gitlab.smtp.password.key | string | `"password"` |  |
+| gitlab.smtp.password.secret | string | `"smtp-password"` |  |
+| gitlab.smtp.tls | bool | `true` |  |
+| gitlab.smtp.user_name | string | `"example"` |  |
 | gitlab.version | string | `nil` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
@@ -191,7 +201,7 @@ Harbor Helm chart configured by Ujstor
 
 # k8s-windows
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.7](https://img.shields.io/badge/AppVersion-4.0.7-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 4.0.7](https://img.shields.io/badge/AppVersion-4.0.7-informational?style=flat-square)
 
 Run windows on Kubernetes
 
@@ -244,7 +254,9 @@ Run windows on Kubernetes
 | secret-store.secretStore.provider.type | string | `"kubernetes"` |  |
 | securityContext.capabilities.add[0] | string | `"NET_ADMIN"` |  |
 | securityContext.capabilities.add[1] | string | `"SYS_ADMIN"` |  |
+| securityContext.fsGroup | int | `0` |  |
 | securityContext.privileged | bool | `true` |  |
+| securityContext.runAsUser | int | `0` |  |
 | service.ports[0].name | string | `"http"` |  |
 | service.ports[0].port | int | `80` |  |
 | service.ports[0].protocol | string | `"TCP"` |  |
