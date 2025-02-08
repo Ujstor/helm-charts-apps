@@ -11,11 +11,13 @@ gitlab:
     enabled: true
     address: 'smtp.example.com'
     tls: true
+    port: 587
     authentication: 'plain'
     user_name: 'example'
     password:
       secret: 'smtp-password'
       key: 'password'
+
 
 # If release ns is not the same as the operator ns
 serviceAccount:
