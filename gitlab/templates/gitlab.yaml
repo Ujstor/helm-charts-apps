@@ -53,6 +53,7 @@ spec:
           enabled: {{ .Values.gitlab.smtp.enabled }}
           address: {{ .Values.gitlab.smtp.address }}
           tls: {{ .Values.gitlab.smtp.tls }}
+          starttls_auto: {{ .Values.gitlab.smtp.starttls_auto }}
           port: {{ .Values.gitlab.smtp.port }}
           authentication: {{ .Values.gitlab.smtp.authentication }}
           user_name : {{ .Values.gitlab.smtp.user_name }}

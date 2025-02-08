@@ -10,7 +10,8 @@ gitlab:
   smtp:
     enabled: true
     address: 'smtp.example.com'
-    tls: true
+    tls: false
+    starttls_auto: true
     port: 587
     authentication: 'plain'
     user_name: 'example'

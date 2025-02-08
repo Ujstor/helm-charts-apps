@@ -62,7 +62,8 @@ A Helm chart for Kubernetes
 | gitlab.smtp.password.key | string | `"password"` |  |
 | gitlab.smtp.password.secret | string | `"smtp-password"` |  |
 | gitlab.smtp.port | int | `587` |  |
-| gitlab.smtp.tls | bool | `true` |  |
+| gitlab.smtp.starttls_auto | bool | `true` |  |
+| gitlab.smtp.tls | bool | `false` |  |
 | gitlab.smtp.user_name | string | `"example"` |  |
 | gitlab.version | string | `nil` |  |
 | serviceAccount.annotations | object | `{}` |  |
