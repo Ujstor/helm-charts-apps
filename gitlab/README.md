@@ -40,6 +40,8 @@ A Helm chart for Kubernetes
 | gitlab-runner.rbac.rules[3].resources[0] | string | `"secrets"` |  |
 | gitlab-runner.rbac.rules[3].verbs[0] | string | `"list"` |  |
 | gitlab-runner.rbac.rules[3].verbs[1] | string | `"get"` |  |
+| gitlab-runner.rbac.rules[3].verbs[2] | string | `"create"` |  |
+| gitlab-runner.rbac.rules[3].verbs[3] | string | `"delete"` |  |
 | gitlab-runner.rbac.rules[4].apiGroups[0] | string | `""` |  |
 | gitlab-runner.rbac.rules[4].resources[0] | string | `"configmaps"` |  |
 | gitlab-runner.rbac.rules[4].verbs[0] | string | `"list"` |  |
