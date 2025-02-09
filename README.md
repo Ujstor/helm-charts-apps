@@ -47,7 +47,7 @@ Gitea Helm chart configured by Ujstor
 
 # gitlab
 
-![Version: 8.6.1](https://img.shields.io/badge/Version-8.6.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 17.6.1](https://img.shields.io/badge/AppVersion-17.6.1-informational?style=flat-square)
+![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 17.6.1](https://img.shields.io/badge/AppVersion-17.6.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -103,7 +103,7 @@ A Helm chart for Kubernetes
 | gitlab-runner.rbac.rules[4].verbs[0] | string | `"get"` |  |
 | gitlab-runner.rbac.rules[4].verbs[1] | string | `"list"` |  |
 | gitlab-runner.rbac.rules[4].verbs[2] | string | `"watch"` |  |
-| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n"` |  |
+| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n    [[runners.kubernetes.volumes.host_path]]\n      name = \"buildah\"\n      mount_path = \"/var/lib/containers/\"\n      read_only = false\n"` |  |
 | gitlab-runner.secrets[0].items[0].key | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].items[0].path | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
