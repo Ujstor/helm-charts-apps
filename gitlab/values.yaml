@@ -53,7 +53,7 @@ gitlab-runner:
         [runners.kubernetes]
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
-          privileged = false
+          privileged = true
           service_account = "gitlab-gitlab-runner"
           service_account_overwrite_allowed = "*"
           image_pull_secrets = ["harbor-admin-secret"]

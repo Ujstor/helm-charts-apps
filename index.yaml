@@ -3,14 +3,14 @@ entries:
   docker-mailserver:
   - apiVersion: v2
     appVersion: 4.0.7
-    created: "2025-02-09T05:49:31.38091766+01:00"
+    created: "2025-02-09T06:05:36.278794422+01:00"
     dependencies:
     - alias: dockermailserver
       name: docker-mailserver
       repository: https://docker-mailserver.github.io/docker-mailserver-helm
       version: 4.0.7
     description: Mailserver chart configured by Ujstor
-    digest: 62925b70e89875024fb78689ab9727ed2088c1efa5dd6571ceb47251802aebe4
+    digest: e7a8b83f29209db9fc43817195d4a4e666914f87553ec0812496f8dec4befefe
     name: docker-mailserver
     type: application
     urls:
@@ -19,7 +19,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.22.3
-    created: "2025-02-09T05:49:31.398707333+01:00"
+    created: "2025-02-09T06:05:36.297464139+01:00"
     dependencies:
     - name: gitea
       repository: https://dl.gitea.com/charts/
@@ -28,7 +28,7 @@ entries:
       repository: oci://harbor.k3s0.ujstor.com/helm
       version: 1.0.0
     description: Gitea Helm chart configured by Ujstor
-    digest: dfa827fac8705765cf9bf28f0cab184ff4fd3c26c40ebfc0519f0fc6aa24684a
+    digest: 31716921c228a0bd9feccc899365b8db2ccdbc1f7befee5ae211e2bda954fea9
     name: gitea
     type: application
     urls:
@@ -37,7 +37,7 @@ entries:
   gitlab:
   - apiVersion: v2
     appVersion: 17.6.1
-    created: "2025-02-09T05:49:31.403654338+01:00"
+    created: "2025-02-09T06:05:36.30211185+01:00"
     dependencies:
     - name: gitlab-runner
       repository: https://charts.gitlab.io
@@ -51,7 +51,21 @@ entries:
     version: 8.6.1
   - apiVersion: v2
     appVersion: 17.6.1
-    created: "2025-02-09T05:49:31.401270307+01:00"
+    created: "2025-02-09T06:05:36.300624874+01:00"
+    dependencies:
+    - name: gitlab-runner
+      repository: https://charts.gitlab.io
+      version: 0.71.0
+    description: A Helm chart for Kubernetes
+    digest: 70ea55089d21882578ab43c983b97a95b64f37ad556bc209d54ae40a694e574a
+    name: gitlab
+    type: application
+    urls:
+    - https://Ujstor.github.io/helm-charts-apps/gitlab-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 17.6.1
+    created: "2025-02-09T06:05:36.299034646+01:00"
     dependencies:
     - name: gitlab-runner
       repository: https://charts.gitlab.io
@@ -66,7 +80,7 @@ entries:
   harbor:
   - apiVersion: v2
     appVersion: 2.12.0
-    created: "2025-02-09T05:49:31.413972214+01:00"
+    created: "2025-02-09T06:05:36.309782954+01:00"
     dependencies:
     - name: harbor
       repository: https://helm.goharbor.io
@@ -75,7 +89,7 @@ entries:
       repository: oci://harbor.k3s0.ujstor.com/helm
       version: 1.1.0
     description: Harbor Helm chart configured by Ujstor
-    digest: 9b76d6bae0b5a2d3aab13b981cb2fc5d74c77e2e8a1d9f57d23b2c7a64172226
+    digest: d7391549fb09dd0d9ffd22435710d9d84e08c6a33a14ec517fa691bc3dab2ab6
     name: harbor
     type: application
     urls:
@@ -83,7 +97,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.12.0
-    created: "2025-02-09T05:49:31.408292667+01:00"
+    created: "2025-02-09T06:05:36.304932769+01:00"
     dependencies:
     - name: harbor
       repository: https://helm.goharbor.io
@@ -101,13 +115,13 @@ entries:
   k8s-windows:
   - apiVersion: v2
     appVersion: 4.0.7
-    created: "2025-02-09T05:49:31.415368787+01:00"
+    created: "2025-02-09T06:05:36.312113645+01:00"
     dependencies:
     - name: secret-store
       repository: oci://harbor.k3s0.ujstor.com/helm
       version: 1.0.0
     description: Run windows on Kubernetes
-    digest: 4e4615046c508dbc69299a4cc02d5ff42e4d7f8a13eb434bcc3a3793695b35bb
+    digest: d583710cb0c7d6d9a9f3c77fea54c61b8e6913ba660e0d9777407491c9cb7048
     name: k8s-windows
     type: application
     urls:
@@ -115,7 +129,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 4.0.7
-    created: "2025-02-09T05:49:31.414394711+01:00"
+    created: "2025-02-09T06:05:36.310490906+01:00"
     dependencies:
     - name: secret-store
       repository: https://ujstor.github.io/helm-charts-system
@@ -130,7 +144,7 @@ entries:
   plausible-analytics:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-02-09T05:49:31.422778374+01:00"
+    created: "2025-02-09T06:05:36.320640762+01:00"
     dependencies:
     - name: plausible-analytics
       repository: https://imio.github.io/helm-charts
@@ -139,7 +153,7 @@ entries:
       repository: oci://harbor.k3s0.ujstor.com/helm
       version: 1.0.0
     description: Plausible-analytics Helm chart configured by Ujstor
-    digest: 9ca1277a2496bcf3d9b1200a37a79704b41afac29e251b6d597a4b566cc654a7
+    digest: 5c888543a0df9505d253a21d7107aa09023994ca9a0fc2f381298a90d0f52a68
     name: plausible-analytics
     type: application
     urls:
@@ -148,13 +162,13 @@ entries:
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.23.13
-    created: "2025-02-09T05:49:31.423656449+01:00"
+    created: "2025-02-09T06:05:36.321528558+01:00"
     dependencies:
     - name: uptime-kuma
       repository: https://helm.irsigler.cloud
       version: 2.20.0
     description: Uptime Kuma Helm chart configured by Ujstor
-    digest: 5ec5d36637a5edf12fb2c2bf520b8a5d66b912afa8586673f6666cf3a94a8fc1
+    digest: 7df6f9257f5c89d6790050b005d98da28804fb54013215b31422956ebdf4eb03
     name: uptime-kuma
     type: application
     urls:
@@ -163,16 +177,16 @@ entries:
   wordpress:
   - apiVersion: v2
     appVersion: 6.7.1
-    created: "2025-02-09T05:49:31.430930973+01:00"
+    created: "2025-02-09T06:05:36.329002118+01:00"
     dependencies:
     - name: wordpress
       repository: https://charts.bitnami.com/bitnami
       version: 24.0.7
     description: Wordpress Helm chart configured by Ujstor
-    digest: 821a738b2e18e945ceef439fced42b27076c306402cd3b6bb618b56a174c37d7
+    digest: abebe7cdb17a6e40c413cf448d530cf3a134e1d80c2deb20786ce1544ef6606c
     name: wordpress
     type: application
     urls:
     - https://Ujstor.github.io/helm-charts-apps/wordpress-1.0.0.tgz
     version: 1.0.0
-generated: "2025-02-09T05:49:31.379248231+01:00"
+generated: "2025-02-09T06:05:36.277197644+01:00"
