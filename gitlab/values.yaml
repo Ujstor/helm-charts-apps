@@ -54,7 +54,7 @@ gitlab-runner-1:
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
           privileged = true
-          service_account = "gitlab-gitlab-runner"
+          service_account = "gitlab-gitlab-runner-1"
           service_account_overwrite_allowed = "*"
           image_pull_secrets = ["harbor-admin-secret"]
           [[runners.kubernetes.volumes.host_path]]
@@ -106,7 +106,7 @@ gitlab-runner-2:
           namespace = "{{.Release.Namespace}}"
           image = "alpine"
           privileged = true
-          service_account = "gitlab-gitlab-runner"
+          service_account = "gitlab-gitlab-runner-2"
           service_account_overwrite_allowed = "*"
           image_pull_secrets = ["harbor-admin-secret"]
           [[runners.kubernetes.volumes.host_path]]
