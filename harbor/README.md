@@ -9,7 +9,7 @@ Harbor Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://helm.goharbor.io | harbor | 1.16.0 |
-| https://ujstor.github.io/helm-charts-system | minio-tenant | 1.1.0 |
+| oci://harbor.k3s0.ujstor.com/helm | minio-tenant | 1.1.0 |
 
 ## Values
 

@@ -13,7 +13,7 @@ Gitea Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://dl.gitea.com/charts/ | gitea | 10.6.0 |
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 
@@ -103,7 +103,7 @@ A Helm chart for Kubernetes
 | gitlab-runner.rbac.rules[4].verbs[0] | string | `"get"` |  |
 | gitlab-runner.rbac.rules[4].verbs[1] | string | `"list"` |  |
 | gitlab-runner.rbac.rules[4].verbs[2] | string | `"watch"` |  |
-| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n"` |  |
+| gitlab-runner.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = false\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n"` |  |
 | gitlab-runner.secrets[0].items[0].key | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].items[0].path | string | `"runner-registration-token"` |  |
 | gitlab-runner.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
@@ -140,7 +140,7 @@ Harbor Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://helm.goharbor.io | harbor | 1.16.0 |
-| https://ujstor.github.io/helm-charts-system | minio-tenant | 1.1.0 |
+| oci://harbor.k3s0.ujstor.com/helm | minio-tenant | 1.1.0 |
 
 ## Values
 
@@ -221,7 +221,7 @@ Run windows on Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 
@@ -339,7 +339,7 @@ Plausible-analytics Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://imio.github.io/helm-charts | plausible-analytics | 0.3.3 |
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 

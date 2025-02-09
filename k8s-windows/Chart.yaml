@@ -8,4 +8,4 @@ appVersion: "4.0.7"
 dependencies:
 - name: secret-store
   version: 1.0.0
-  repository: "https://ujstor.github.io/helm-charts-system"
+  repository: "oci://harbor.k3s0.ujstor.com/helm"

@@ -8,7 +8,7 @@ Run windows on Kubernetes
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 

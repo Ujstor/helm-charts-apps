@@ -56,6 +56,7 @@ gitlab-runner:
           privileged = false
           service_account = "gitlab-gitlab-runner"
           service_account_overwrite_allowed = "*"
+          image_pull_secrets = ["harbor-admin-secret"]
 
   # Name of the secret containing registration token
   # <release-name>-gitlab-runner-secret

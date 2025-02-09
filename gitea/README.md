@@ -9,7 +9,7 @@ Gitea Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://dl.gitea.com/charts/ | gitea | 10.6.0 |
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 

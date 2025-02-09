@@ -3,7 +3,7 @@ dependencies:
   repository: https://helm.goharbor.io
   version: 1.16.0
 - name: minio-tenant
-  repository: https://ujstor.github.io/helm-charts-system
+  repository: oci://harbor.k3s0.ujstor.com/helm
   version: 1.1.0
-digest: sha256:5057df54baf11fbbee232cf50a492846442453ff723e08f72a72829744aabd81
-generated: "2024-12-14T18:16:30.989432134+01:00"
+digest: sha256:e99822110ab904ca19ae656eac342c9bca897bf744aee27d00d6245fbe4910a1
+generated: "2025-02-08T23:27:12.957256265+01:00"

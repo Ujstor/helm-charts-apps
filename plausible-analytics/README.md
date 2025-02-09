@@ -9,7 +9,7 @@ Plausible-analytics Helm chart configured by Ujstor
 | Repository | Name | Version |
 |------------|------|---------|
 | https://imio.github.io/helm-charts | plausible-analytics | 0.3.3 |
-| https://ujstor.github.io/helm-charts-system | secret-store | 1.0.0 |
+| oci://harbor.k3s0.ujstor.com/helm | secret-store | 1.0.0 |
 
 ## Values
 
