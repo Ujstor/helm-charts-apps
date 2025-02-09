@@ -57,15 +57,13 @@ gitlab-runner-1:
           service_account = "gitlab-gitlab-runner"
           service_account_overwrite_allowed = "*"
           image_pull_secrets = ["harbor-admin-secret"]
-          [[runners.kubernetes.volumes.empty_dir]]
+          [[runners.kubernetes.volumes.host_path]]
             name = "buildah-storage"
             mount_path = "/var/lib/containers"
-            medium = "Memory"
             read_only = false
-          [[runners.kubernetes.volumes.empty_dir]]
+          [[runners.kubernetes.volumes.host_path]]
             name = "tmp-data"
             mount_path = "/tmp"
-            medium = "Memory"
             read_only = false
           [runners.kubernetes.resource_limits]
             memory = "4Gi"
@@ -111,15 +109,13 @@ gitlab-runner-2:
           service_account = "gitlab-gitlab-runner"
           service_account_overwrite_allowed = "*"
           image_pull_secrets = ["harbor-admin-secret"]
-          [[runners.kubernetes.volumes.empty_dir]]
+          [[runners.kubernetes.volumes.host_path]]
             name = "buildah-storage"
             mount_path = "/var/lib/containers"
-            medium = "Memory"
             read_only = false
-          [[runners.kubernetes.volumes.empty_dir]]
+          [[runners.kubernetes.volumes.host_path]]
             name = "tmp-data"
             mount_path = "/tmp"
-            medium = "Memory"
             read_only = false
           [runners.kubernetes.resource_limits]
             memory = "4Gi"

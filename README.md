@@ -47,7 +47,7 @@ Gitea Helm chart configured by Ujstor
 
 # gitlab
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 17.6.1](https://img.shields.io/badge/AppVersion-17.6.1-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 17.8.1](https://img.shields.io/badge/AppVersion-17.8.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -104,7 +104,7 @@ A Helm chart for Kubernetes
 | gitlab-runner-1.rbac.rules[4].verbs[0] | string | `"get"` |  |
 | gitlab-runner-1.rbac.rules[4].verbs[1] | string | `"list"` |  |
 | gitlab-runner-1.rbac.rules[4].verbs[2] | string | `"watch"` |  |
-| gitlab-runner-1.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = true\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n    [[runners.kubernetes.volumes.empty_dir]]\n      name = \"buildah-storage\"\n      mount_path = \"/var/lib/containers\"\n      medium = \"Memory\"\n      read_only = false\n    [[runners.kubernetes.volumes.empty_dir]]\n      name = \"tmp-data\"\n      mount_path = \"/tmp\"\n      medium = \"Memory\"\n      read_only = false\n    [runners.kubernetes.resource_limits]\n      memory = \"4Gi\"\n      cpu = \"2\"\n"` |  |
+| gitlab-runner-1.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = true\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n    [[runners.kubernetes.volumes.host_path]]\n      name = \"buildah-storage\"\n      mount_path = \"/var/lib/containers\"\n      read_only = false\n    [[runners.kubernetes.volumes.host_path]]\n      name = \"tmp-data\"\n      mount_path = \"/tmp\"\n      read_only = false\n    [runners.kubernetes.resource_limits]\n      memory = \"4Gi\"\n      cpu = \"2\"\n"` |  |
 | gitlab-runner-1.secrets[0].items[0].key | string | `"runner-registration-token"` |  |
 | gitlab-runner-1.secrets[0].items[0].path | string | `"runner-registration-token"` |  |
 | gitlab-runner-1.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
@@ -150,7 +150,7 @@ A Helm chart for Kubernetes
 | gitlab-runner-2.rbac.rules[4].verbs[0] | string | `"get"` |  |
 | gitlab-runner-2.rbac.rules[4].verbs[1] | string | `"list"` |  |
 | gitlab-runner-2.rbac.rules[4].verbs[2] | string | `"watch"` |  |
-| gitlab-runner-2.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = true\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n    [[runners.kubernetes.volumes.empty_dir]]\n      name = \"buildah-storage\"\n      mount_path = \"/var/lib/containers\"\n      medium = \"Memory\"\n      read_only = false\n    [[runners.kubernetes.volumes.empty_dir]]\n      name = \"tmp-data\"\n      mount_path = \"/tmp\"\n      medium = \"Memory\"\n      read_only = false\n    [runners.kubernetes.resource_limits]\n      memory = \"4Gi\"\n      cpu = \"2\"\n"` |  |
+| gitlab-runner-2.runners.config | string | `"[[runners]]\n  [runners.kubernetes]\n    namespace = \"{{.Release.Namespace}}\"\n    image = \"alpine\"\n    privileged = true\n    service_account = \"gitlab-gitlab-runner\"\n    service_account_overwrite_allowed = \"*\"\n    image_pull_secrets = [\"harbor-admin-secret\"]\n    [[runners.kubernetes.volumes.host_path]]\n      name = \"buildah-storage\"\n      mount_path = \"/var/lib/containers\"\n      read_only = false\n    [[runners.kubernetes.volumes.host_path]]\n      name = \"tmp-data\"\n      mount_path = \"/tmp\"\n      read_only = false\n    [runners.kubernetes.resource_limits]\n      memory = \"4Gi\"\n      cpu = \"2\"\n"` |  |
 | gitlab-runner-2.secrets[0].items[0].key | string | `"runner-registration-token"` |  |
 | gitlab-runner-2.secrets[0].items[0].path | string | `"runner-registration-token"` |  |
 | gitlab-runner-2.secrets[0].name | string | `"gitlab-gitlab-runner-secret"` |  |
